@@ -1,0 +1,16 @@
+{
+    "name": "Ransom.Core",
+    "rootNamespace": "Ransom",
+    "references": [
+        "GUID:f290b9fa9a67b1340a4efdf6fcb935a5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
