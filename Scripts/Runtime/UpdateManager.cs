@@ -9,19 +9,17 @@ using UnityEditor;
 namespace Ransom
 {
     [DefaultExecutionOrder(-500)]
-    public class UnityEventDispatcher : MonoBehaviour
+    public class UpdateManager : Singleton<UpdateManager>
     {
         #region Fields
-        private static UnityEventDispatcher _instance;
-
-        public static event Action OnUpdate      = delegate {};
+        public static event Action OnUpdate = delegate {};
         public static event Action OnLateUpdate  = delegate {};
         public static event Action OnFixedUpdate = delegate {};
         #endregion Fields
         
         #region Constructors
-        // Automatically create UnityEventDispatcher when invoked in any way
-        static UnityEventDispatcher()
+        // Automatically create UnityUpdateManager when invoked in any way
+        static UpdateManager()
         {
             // Clean up our instance while inside the Editor to prevent runtime errors
             #if UNITY_EDITOR
@@ -29,43 +27,25 @@ namespace Ransom
             {
                 if (x == PlayModeStateChange.ExitingPlayMode)
                 {
-                    if (_instance != null) Destroy(_instance);
+                    if (!(Instance is null)) Destroy(Instance);
                 }
             };
             #endif
 
-            GameObject go = new GameObject("UnityEventDispatcher", typeof(UnityEventDispatcher));
-            // Hide our shameful disregard of Unity best practices
+            GameObject go = new GameObject("UnityUpdateManager", typeof(UpdateManager));
             go.hideFlags  = HideFlags.HideAndDontSave;
         }
         #endregion Constructors
 
         #region Unity Callbacks
-        private void Awake()
-        {
-            if (_instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        private void Update()      => OnUpdate();
-
+        private void Update() => OnUpdate();
         private void LateUpdate()  => OnLateUpdate();
-
         private void FixedUpdate() => OnFixedUpdate();
         #endregion Unity Callbacks
 
         #region Methods
-        // Global coroutine helper function
-        public static Coroutine StartGlobalCoroutine(IEnumerator coroutine)
-        {
-            return _instance.StartCoroutine(coroutine);
-        }
+        public static Coroutine StartGlobalCoroutine(IEnumerator coroutine) => Instance.StartCoroutine(coroutine);
+        public static void StopGlobalCoroutine(Coroutine coroutine) => Instance.StopCoroutine(coroutine);
         #endregion Methods
     }
 }

@@ -10,7 +10,7 @@ namespace Ransom
         #endregion Fields
 
         #region Properties
-        public  static T     Instance
+        public  static T Instance
         {
             get
             {
@@ -34,7 +34,7 @@ namespace Ransom
         #region Unity Callbacks
         protected virtual void Awake()
         {
-            if (!ReferenceEquals(_instance, null))
+            if (!(_instance is null))
             {
                 Destroy(gameObject);
                 return;
