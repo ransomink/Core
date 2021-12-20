@@ -1,7 +1,7 @@
 {
     "name": "com.ransomink.core",
     "version": "1.0.0",
-    "displayName": "Ransom Core",
+    "displayName": "Ransom Core Framework",
     "description": "Base functionality used for creating core systems and modular code.",
     "unity": "2020.3",
     "unityRelease": "0f1",
@@ -9,10 +9,11 @@
         "base",
         "core",
         "framework",
+        "unity",
         "ransom"
     ],
     "author": {
         "name": "Joshua Smith",
-        "url": "https://github.com/ransomink/Core"
+        "url": "https://github.com/ransomink/core-framework"
     }
 }
