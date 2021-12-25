@@ -11,6 +11,7 @@ namespace Ransom
 
         #region Properties
         public bool IsDestroyed => _isDestroyed = CheckIfDestroyed();
+        public bool IsNull => this is null || this as object is null;
         protected Transform MyTransform => _transform;
         #endregion Properties
     
