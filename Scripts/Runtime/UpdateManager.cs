@@ -19,22 +19,22 @@ namespace Ransom
         
         #region Constructors
         // Automatically create UnityUpdateManager when invoked in any way
-        static UpdateManager()
-        {
-            // Clean up our instance while inside the Editor to prevent runtime errors
-            #if UNITY_EDITOR
-            EditorApplication.playModeStateChanged += (x) =>
-            {
-                if (x == PlayModeStateChange.ExitingPlayMode)
-                {
-                    if (!(Instance is null)) Destroy(Instance);
-                }
-            };
-            #endif
+        // static UpdateManager()
+        // {
+        //     // Clean up our instance while inside the Editor to prevent runtime errors
+        //     #if UNITY_EDITOR
+        //     EditorApplication.playModeStateChanged += (x) =>
+        //     {
+        //         if (x == PlayModeStateChange.ExitingPlayMode)
+        //         {
+        //             if (!(Instance is null)) Destroy(Instance);
+        //         }
+        //     };
+        //     #endif
 
-            GameObject go = new GameObject("UnityUpdateManager", typeof(UpdateManager));
-            go.hideFlags  = HideFlags.HideAndDontSave;
-        }
+        //     GameObject go = new GameObject("UnityUpdateManager", typeof(UpdateManager));
+        //     go.hideFlags  = HideFlags.HideAndDontSave;
+        // }
         #endregion Constructors
 
         #region Unity Callbacks
