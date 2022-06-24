@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace Ransomink
+namespace Ransom
 {
     // Original by DYLAN ENGELMAN http://jupiterlighthousestudio.com/custom-inspectors-unity/
     // Altered by Brecht Lecluyse http://www.brechtos.com

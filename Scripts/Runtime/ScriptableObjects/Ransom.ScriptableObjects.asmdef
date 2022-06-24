@@ -1,0 +1,16 @@
+{
+    "name": "Ransom.ScriptableObjects",
+    "rootNamespace": "Ransom",
+    "references": [
+        "GUID:fe2c4a80068bb804cac6380c9ef65e52"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

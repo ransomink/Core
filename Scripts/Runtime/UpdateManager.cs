@@ -45,6 +45,7 @@ namespace Ransom
 
         #region Methods
         public static Coroutine StartGlobalCoroutine(IEnumerator coroutine) => Instance.StartCoroutine(coroutine);
+        public static void StopGlobalCoroutine(IEnumerator coroutine) => Instance.StopCoroutine(coroutine);
         public static void StopGlobalCoroutine(Coroutine coroutine) => Instance.StopCoroutine(coroutine);
         #endregion Methods
     }

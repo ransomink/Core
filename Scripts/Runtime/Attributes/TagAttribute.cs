@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Ransomink
+namespace Ransom
 {
     public class TagAttribute : PropertyAttribute
     {

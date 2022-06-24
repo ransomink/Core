@@ -3,28 +3,28 @@ namespace Ransom
     public class GameManager : Singleton<GameManager>
     {
         #region Unity Callbacks
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            UpdateManager.OnUpdate      += OnUpdate;
             UpdateManager.OnFixedUpdate += OnFixedUpdate;
+            UpdateManager.OnUpdate      += OnUpdate;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
-            UpdateManager.OnUpdate      -= OnUpdate;
             UpdateManager.OnFixedUpdate -= OnFixedUpdate;
+            UpdateManager.OnUpdate      -= OnUpdate;
         }
 
-        private void OnFixedUpdate()
+        protected virtual void OnFixedUpdate()
         {
-            StaticTime.OnFixedUpdate();
             // Time.Instance.OnFixedUpdate();
+            StaticTime.OnFixedUpdate();
         }
 
-        private void OnUpdate()
+        protected virtual void OnUpdate()
         {
-            StaticTime.OnUpdate();
             // Time.Instance.OnUpdate();
+            StaticTime.OnUpdate();
         }
         #endregion Unity Callbacks
     }
