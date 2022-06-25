@@ -1,6 +1,6 @@
 namespace Ransom
 {
-    public static class Folder
+    public static partial class Folder
     {
         public const string NEW = "New";
         public const string SO  = "ScriptableObject/";

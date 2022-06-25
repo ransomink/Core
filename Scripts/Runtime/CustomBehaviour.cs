@@ -6,7 +6,7 @@ namespace Ransom
     {
         #region Fields
         [SerializeField] private bool _isDestroyed;
-        private Transform _transform;
+        [SerializeField] private Transform _transform;
         #endregion Fields
 
         #region Properties
@@ -18,7 +18,7 @@ namespace Ransom
         #region Unity Callbacks
         protected virtual void Awake()
         {
-            _transform = transform;
+            if (_transform == null) _transform = transform;
         }
         #endregion Unity Callbacks
 

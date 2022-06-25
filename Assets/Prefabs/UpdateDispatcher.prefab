@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6377613052779743612}
   - component: {fileID: 8971898154117256968}
   m_Layer: 0
-  m_Name: UpdateManager
+  m_Name: UpdateDispatcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

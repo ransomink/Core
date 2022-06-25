@@ -2,7 +2,8 @@
     "name": "Ransom.ScriptableObjects",
     "rootNamespace": "Ransom",
     "references": [
-        "GUID:fe2c4a80068bb804cac6380c9ef65e52"
+        "GUID:fe2c4a80068bb804cac6380c9ef65e52",
+        "GUID:f290b9fa9a67b1340a4efdf6fcb935a5"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

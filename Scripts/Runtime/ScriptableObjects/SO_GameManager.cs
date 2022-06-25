@@ -6,13 +6,13 @@ namespace Ransom
     public class SO_GameManager : Singleton<GameManager>
     {
         #region Fields
+        // [SerializeField] private SO_UpdateEvent _fixedUpdate;
         // [SerializeField] private SO_UpdateEvent _baseUpdate;
         // [SerializeField] private SO_UpdateEvent _lateUpdate;
-        // [SerializeField] private SO_UpdateEvent _fixedUpdate;
         [SerializeField] private List<Manager> _start;
+        [SerializeField] private List<Manager> _fixedUpdate;
         [SerializeField] private List<Manager> _baseUpdate;
         [SerializeField] private List<Manager> _lateUpdate;
-        [SerializeField] private List<Manager> _fixedUpdate;
         [SerializeField] private List<Manager> _destroy;
         #endregion Fields
         
