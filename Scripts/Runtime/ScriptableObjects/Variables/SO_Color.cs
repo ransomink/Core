@@ -3,8 +3,8 @@
 namespace Ransom
 {
     [CreateAssetMenu(
-        fileName = Folder.NEW + Folder.NAME_COLOR, 
-        menuName = Folder.SO  + Folder.BASE_VARIABLE + Folder.NAME_COLOR, 
+        fileName = Folder.New + Folder.Name_Color, 
+        menuName = Folder.SO  + Folder.Base_Variable + Folder.Name_Color, 
         order    = 3
     )]
     public class SO_Color : SO_BaseVariable<Color> {}

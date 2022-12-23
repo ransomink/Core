@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6e63b1078531a2429071481a1ee58de, type: 3}
-  m_Name: TimeManager
+  m_Name: Time
   m_EditorClassIdentifier: 
   timeScale: 0
   frameCount: 0

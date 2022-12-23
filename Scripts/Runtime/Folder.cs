@@ -2,57 +2,38 @@ namespace Ransom
 {
     public static partial class Folder
     {
-        public const string NEW = "New";
+        public const string New = "New";
         public const string SO  = "ScriptableObject/";
 
-        // System
-        public const string SYS_DAMAGE_TEXT = "DamageText/";
-
         #region Base
-        public const string BASE_FACTORY  = "Factory/";
-        public const string BASE_MANAGER  = "Manager/";
-        public const string BASE_UPDATE   = "Update/";
-        public const string BASE_VARIABLE = "Variable/";
+        public const string Base_Manager  = "Manager/";
+        public const string Base_Variable = "Variable/";
         #endregion
 
-        #region Types
-        public const string NAME_COLLECTION = "Collection";
-        public const string NAME_CONFIG     = "Config";
-        public const string NAME_DATA       = "Data";
-        public const string NAME_MANAGER    = "Manager";
-        public const string NAME_PROPERTY   = "Property";
-        public const string NAME_TYPE       = "Type";
-        #endregion
-
-        #region Factory
-        public const string NAME_DEFAULT   = "Default";
-        public const string NAME_ELEMENTAL = "Elemental";
-        #endregion
-
-        #region Variables
-        public const string NAME_ANIM_CURVE = "AnimationCurve";
-        public const string NAME_BASE       = "Base";
-        public const string NAME_BOOL       = "Bool";
-        public const string NAME_CAMERA     = "Camera";
-        public const string NAME_COLOR      = "Color";
-        public const string NAME_EASING     = "Easing";
-        public const string NAME_FLOAT      = "Float";
-        public const string NAME_GRADIENT   = "Gradient";
-        public const string NAME_INT        = "Int";
-        public const string NAME_MATERIAL   = "Material";
-        public const string NAME_STRING     = "String";
-        public const string NAME_VECTOR     = "Vector";
-        public const string NAME_VECTOR2    = "Vector2";
-        public const string NAME_VECTOR3    = "Vector3";
+        #region Fields
+        public const string Name_AnimCurve  = "AnimationCurve";
+        public const string Name_Bool       = "Bool";
+        public const string Name_Camera     = "Camera";
+        public const string Name_Color      = "Color";
+        public const string Name_Easing     = "Easing";
+        public const string Name_Float      = "Float";
+        public const string Name_Gradient   = "Gradient";
+        public const string Name_Int        = "Int";
+        public const string Name_Material   = "Material";
+        public const string Name_String     = "String";
+        public const string Name_Vector     = "Vector";
+        public const string Name_Vector2    = "Vector2";
+        public const string Name_Vector3    = "Vector3";
         #endregion
 
         #region Names
-        public const string NAME_CURVE      = "Curve";
-        public const string NAME_DISPATCHER = "Dispatcher";
-        public const string NAME_EVENT      = "Event";
-        public const string NAME_TIME       = "Time";
-        public const string NAME_TIMER      = "Timer";
-        public const string NAME_UPDATE     = "Update";
+        public const string Name_Curve      = "Curve";
+        public const string Name_Dispatcher = "Dispatcher";
+        public const string Name_Event      = "Event";
+        public const string Name_Manager    = "Manager";
+        public const string Name_Time       = "Time";
+        public const string Name_Timer      = "Timer";
+        public const string Name_Update     = "Update";
         #endregion
     }
 }

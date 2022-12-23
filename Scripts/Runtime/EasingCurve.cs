@@ -24,23 +24,31 @@ namespace Ransom
         #region Methods
         public override bool Equals(object obj)
         {
-            if (obj is EasingCurve curve) return Equals(curve);
-            return false;
+            return ((obj is EasingCurve curve) && Equals(curve));
+            // if (obj is EasingCurve curve) return Equals(curve);
+            // return false;
         }
 
         public bool Equals(EasingCurve ec)
         {
-            if (!ec.UseCurve) return _easing == ec.Easing;
-            return _curve == ec.Curve;
+            if (ec.UseCurve) { return _curve == ec.Curve; }
+            return _easing == ec.Easing;
         }
 
-        public override int GetHashCode() => (_curve, _easing).GetHashCode();
+        public override int GetHashCode()
+        {
+            if (_useCurve) { return _curve.GetHashCode(); }
+            return _easing.GetHashCode();
+        }
 
-        public override string ToString() => $"Curve: {_curve} | Easing: {_easing}";
+        public override string ToString()
+        {
+            return $"<color>Curve:</color> <color=cyan>{_curve}</color> | <color>Easing:</color> <color=cyan>{_easing}</color>";
+        }
         
         public static bool operator ==(EasingCurve lhs, EasingCurve rhs) => lhs.Equals(rhs);
         
-        public static bool operator !=(EasingCurve lhs, EasingCurve rhs) => !(lhs.Equals(rhs));
+        public static bool operator !=(EasingCurve lhs, EasingCurve rhs) => !lhs.Equals(rhs);
 
         #endregion Methods
     }

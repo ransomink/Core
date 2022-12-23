@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Ransom
 {
-    public class Manager : ScriptableObject, IManager
+    public class SO_Manager : ScriptableObject, IManager
     {
         public virtual void OnAwake() {}
         public virtual void OnEnable() {}

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Ransom
 {
     /// <summary>
@@ -85,17 +83,28 @@ namespace Ransom
         #endregion Properties
 
         #region Unity Callbacks
-        // private void OnEnable()
-        // {
-        //     UnityEventDispatcher.OnFixedUpdate += OnFixedUpdate;
-        //     UnityEventDispatcher.OnUpdate      += OnUpdate;
-        // }
+        public static void Reset()
+        {
+            TimeScale = 0;
+            FrameCount = 0;
+            TimeSinceLevelLoad = 0;
+            RealtimeSinceStartup = 0;
 
-        // private void OnDisable()
-        // {
-        //     UnityEventDispatcher.OnFixedUpdate -= OnFixedUpdate;
-        //     UnityEventDispatcher.OnUpdate      -= OnUpdate;
-        // }
+            ScaledTime = 0;
+            DeltaTime = 0;
+            SmoothDeltaTime = 0;
+            MaximumDeltaTime = 0;
+            MaximumParticleDeltaTime = 0;
+
+            FixedTime = 0;
+            FixedDeltaTime = 0;
+
+            UnscaledTime = 0;
+            UnscaledDeltaTime = 0;
+            
+            FixedUnscaledTime = 0;
+            FixedUnscaledDeltaTime = 0;
+        }
 
         public static void OnFixedUpdate()
         {
@@ -120,6 +129,11 @@ namespace Ransom
             
             UnscaledTime             = UnityEngine.Time.unscaledTime;
             UnscaledDeltaTime        = UnityEngine.Time.unscaledDeltaTime;
+        }
+
+        public static void OnDestroy()
+        {
+            Reset();
         }
         #endregion Unity Callbacks
     }

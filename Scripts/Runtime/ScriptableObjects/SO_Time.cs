@@ -3,14 +3,14 @@ using UnityEngine;
 namespace Ransom
 {
     [CreateAssetMenu(
-        fileName = Folder.NAME_TIME + Folder.NAME_MANAGER, 
-        menuName = Folder.SO + Folder.BASE_MANAGER + Folder.NAME_TIME, 
+        fileName = Folder.Name_Time + Folder.Name_Manager, 
+        menuName = Folder.SO + Folder.Base_Manager + Folder.Name_Time, 
         order    = 0
     )]
     /// <summary>
     /// A ScriptableObject wrapper for Unity's Time class.
     /// </summary>
-    public class SO_Time : Manager
+    public sealed class SO_Time : SO_Manager
     {
         #region Fields
         [Header("TIME")]
@@ -28,7 +28,6 @@ namespace Ransom
         [Space]
         [ReadOnly][SerializeField] private float _fixedTime;
         [ReadOnly][SerializeField] private float _fixedDeltaTime;
-
 
         [Header("UNSCALED")]
         [ReadOnly][SerializeField] private float _unscaledTime;

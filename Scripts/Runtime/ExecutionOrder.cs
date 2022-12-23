@@ -1,18 +1,18 @@
 namespace Ransom
 {
-    public class GameManager : Singleton<GameManager>
+    public class ExecutionOrder : Singleton<ExecutionOrder>
     {
         #region Unity Callbacks
         protected virtual void OnEnable()
         {
-            UpdateManager.OnFixedUpdate += OnFixedUpdate;
-            UpdateManager.OnUpdate      += OnUpdate;
+            UpdateDispatcher.OnFixedUpdate += OnFixedUpdate;
+            UpdateDispatcher.OnUpdate      += OnUpdate;
         }
 
         protected virtual void OnDisable()
         {
-            UpdateManager.OnFixedUpdate -= OnFixedUpdate;
-            UpdateManager.OnUpdate      -= OnUpdate;
+            UpdateDispatcher.OnFixedUpdate -= OnFixedUpdate;
+            UpdateDispatcher.OnUpdate      -= OnUpdate;
         }
 
         protected virtual void OnFixedUpdate()
@@ -25,6 +25,11 @@ namespace Ransom
         {
             // Time.Instance.OnUpdate();
             StaticTime.OnUpdate();
+        }
+
+        protected virtual void OnDestroy()
+        {
+            StaticTime.OnDestroy();
         }
         #endregion Unity Callbacks
     }

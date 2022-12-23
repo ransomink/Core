@@ -2,7 +2,8 @@
     "name": "Ransom.Core",
     "rootNamespace": "Ransom",
     "references": [
-        "GUID:f290b9fa9a67b1340a4efdf6fcb935a5"
+        "GUID:f290b9fa9a67b1340a4efdf6fcb935a5",
+        "GUID:652dd40f81948f04c8176c396c811f79"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

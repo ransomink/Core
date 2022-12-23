@@ -3,8 +3,8 @@ using UnityEngine;
 namespace Ransom
 {
     [CreateAssetMenu(
-        fileName = Folder.NEW + Folder.NAME_STRING, 
-        menuName = Folder.SO  + Folder.BASE_VARIABLE + Folder.NAME_STRING, 
+        fileName = Folder.New + Folder.Name_String, 
+        menuName = Folder.SO  + Folder.Base_Variable + Folder.Name_String, 
         order    = 9
     )]
     public class SO_String : SO_BaseVariable<string> {}

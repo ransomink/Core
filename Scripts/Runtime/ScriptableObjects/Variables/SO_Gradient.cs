@@ -3,8 +3,8 @@
 namespace Ransom
 {
     [CreateAssetMenu(
-        fileName = Folder.NEW + Folder.NAME_GRADIENT, 
-        menuName = Folder.SO  + Folder.BASE_VARIABLE + Folder.NAME_GRADIENT, 
+        fileName = Folder.New + Folder.Name_Gradient, 
+        menuName = Folder.SO  + Folder.Base_Variable + Folder.Name_Gradient, 
         order    = 6
     )]
     public class SO_Gradient : SO_BaseVariable<Gradient> {}

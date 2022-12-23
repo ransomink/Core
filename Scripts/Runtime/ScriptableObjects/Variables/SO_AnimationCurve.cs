@@ -3,8 +3,8 @@ using UnityEngine;
 namespace Ransom
 {
     [CreateAssetMenu(
-        fileName = Folder.NEW + Folder.NAME_ANIM_CURVE, 
-        menuName = Folder.SO  + Folder.BASE_VARIABLE + Folder.NAME_ANIM_CURVE, 
+        fileName = Folder.New + Folder.Name_AnimCurve, 
+        menuName = Folder.SO  + Folder.Base_Variable + Folder.Name_AnimCurve, 
         order    = 0
     )]
     public class SO_AnimationCurve : SO_BaseVariable<AnimationCurve> {}

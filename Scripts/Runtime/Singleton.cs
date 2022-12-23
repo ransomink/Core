@@ -2,7 +2,7 @@
 
 namespace Ransom
 {
-    public class Singleton<T> : MonoBehaviour where T : Component
+    public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
         #region Fields
         private static bool _isActive = true;
@@ -20,10 +20,10 @@ namespace Ransom
                     return null;
                 }
                 
-                if (_instance is null)
+                if (_instance == null)
                 {
                     _instance = FindObjectOfType<T>();
-                    if (_instance is null) _instance = CreateInstance();
+                    if (_instance == null) _instance = CreateInstance();
                 }
 
                 return _instance;
@@ -34,7 +34,7 @@ namespace Ransom
         #region Unity Callbacks
         protected virtual void Awake()
         {
-            if (!(_instance is null))
+            if ((_instance != null))
             {
                 Destroy(gameObject);
                 return;
@@ -57,10 +57,10 @@ namespace Ransom
 
         protected static T CreateInstance(string name)
         {
-            var @object  = new GameObject(name);
-            @object.hideFlags = HideFlags.HideAndDontSave;
-            var instance = @object.AddComponent<T>();
-            DontDestroyOnLoad(@object);
+            var go = new GameObject(name);
+            go.hideFlags = HideFlags.HideAndDontSave;
+            var instance = go.AddComponent<T>();
+            DontDestroyOnLoad(go);
             return instance;
         }
 
