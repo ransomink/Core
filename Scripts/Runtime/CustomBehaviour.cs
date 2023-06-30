@@ -32,7 +32,7 @@ namespace Ransom
         #region Unity Callbacks
         protected virtual void Awake()
         {
-            if (_transform.IsUnityNull()) { _transform = transform; }
+            if (_transform == null) { _transform = transform; }
         }
 
         private void OnEnable()
@@ -60,7 +60,7 @@ namespace Ransom
         public bool CheckIfDestroyed()
         {
             var uo = this as UnityEngine.Object;
-            return ((object)uo is null) && uo == null;
+            return /*((object)uo is null) &&*/ uo == null;
         }
 
         public void SetToDestroy() => _isDestroyed = true;
