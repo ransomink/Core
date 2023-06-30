@@ -14,7 +14,7 @@ namespace Ransom
         private readonly List<IFixedUpdate> _fixedUpdate = new List<IFixedUpdate>(512);
 
         public static event Action OnUpdate = delegate {};
-        public static event Action OnLateUpdate  = delegate {};
+        public static event Action OnLateUpdate = delegate {};
         public static event Action OnFixedUpdate = delegate {};
         #endregion Fields
 

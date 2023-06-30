@@ -39,8 +39,16 @@ namespace Ransom
                 Destroy(gameObject);
                 return;
             }
+
             _instance = this as T;
-            DontDestroyOnLoad(this);
+            
+            if (transform.root == transform)
+            {
+                DontDestroyOnLoad(this);
+                return;
+            }
+
+            gameObject.TryAddComponent<DontDestroyOnLoad>(out _);
         }
 
         private void OnApplicationQuit() => Deactivate();

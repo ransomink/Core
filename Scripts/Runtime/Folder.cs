@@ -10,6 +10,11 @@ namespace Ransom
         public const string Base_Variable = "Variable/";
         #endregion
 
+        #region Type
+        public const string Type_Reference = "Reference/";
+        public const string Type_ValueType = "ValueType/";
+        #endregion
+
         #region Fields
         public const string Name_AnimCurve  = "AnimationCurve";
         public const string Name_Bool       = "Bool";
@@ -21,19 +26,17 @@ namespace Ransom
         public const string Name_Int        = "Int";
         public const string Name_Material   = "Material";
         public const string Name_String     = "String";
+        public const string Name_Transform  = "Transform";
         public const string Name_Vector     = "Vector";
         public const string Name_Vector2    = "Vector2";
         public const string Name_Vector3    = "Vector3";
         #endregion
 
-        #region Names
+        #region Custom
         public const string Name_Curve      = "Curve";
-        public const string Name_Dispatcher = "Dispatcher";
-        public const string Name_Event      = "Event";
         public const string Name_Manager    = "Manager";
         public const string Name_Time       = "Time";
         public const string Name_Timer      = "Timer";
-        public const string Name_Update     = "Update";
         #endregion
     }
 }

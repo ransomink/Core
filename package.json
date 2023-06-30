@@ -1,14 +1,18 @@
 {
     "name": "com.ransomink.core",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "displayName": "Ransom Core Framework",
     "description": "Base functionality used for creating core systems and modular code.",
     "unity": "2020.3",
     "unityRelease": "0f1",
     "keywords": [
         "base",
+        "code",
         "core",
+        "frame",
         "framework",
+        "modular",
+        "system",
         "unity",
         "ransom"
     ],

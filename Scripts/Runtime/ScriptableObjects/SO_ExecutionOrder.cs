@@ -38,6 +38,8 @@ namespace Ransom
 
         protected virtual void OnFixedUpdate()
         {
+            StaticTime.OnFixedUpdate();
+
             var count = _fixedUpdate.Count;
             if (count == 0) { return; }
 
@@ -46,6 +48,8 @@ namespace Ransom
 
         protected virtual void OnUpdate()
         {
+            StaticTime.OnUpdate();
+
             var count = _baseUpdate.Count;
             if (count == 0) { return; }
 
@@ -62,6 +66,8 @@ namespace Ransom
 
         protected virtual void OnDestroy()
         {
+            StaticTime.OnDestroy();
+
             var count = _destroy.Count;
             if (count == 0) { return; }
 

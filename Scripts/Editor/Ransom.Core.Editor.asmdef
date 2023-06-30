@@ -2,7 +2,9 @@
     "name": "Ransom.Core.Editor",
     "rootNamespace": "Ransom.Editor",
     "references": [
-        "Ransom.Attributes"
+        "Ransom.Attributes",
+        "Ransom.Core",
+        "Ransom.ScriptableObjects"
     ],
     "includePlatforms": [
         "Editor"

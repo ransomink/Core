@@ -8,11 +8,11 @@ namespace Ransom
     public abstract class SO_BaseVariable<T> : ScriptableObject, INotifyPropertyChanged // where T : IEquatable<T>
     {
         #region Fields
-        public event UnityAction<T> OnValueChanged = delegate {};
+        public event UnityAction<T> ValueChanged = delegate {};
         public event PropertyChangedEventHandler PropertyChanged = delegate {};
         
         [Header("SETTINGS")]
-        [SerializeField] private bool _readOnly = false;
+        [SerializeField] private bool _readOnly  = false;
         [SerializeField] private bool _isClamped = false;
         [SerializeField] private bool _useDefaultValue = false;
 
@@ -38,8 +38,8 @@ namespace Ransom
         {
             get
             {
-                if (!Clampable) return default(T);
-                else return _minClampedValue;
+                if (!Clampable) { return default(T); }
+                else { return _minClampedValue; }
             }
         }
 
@@ -47,8 +47,8 @@ namespace Ransom
         {
             get
             {
-                if (!Clampable) return default(T);
-                else return _maxClampedValue;
+                if (!Clampable) { return default(T); }
+                else { return _maxClampedValue; }
             }
         }
         
@@ -71,38 +71,48 @@ namespace Ransom
         #region Unity Callbacks
         protected virtual void OnEnable()
         {
+            if (_useDefaultValue)
+            {
+                Clear();
+                return;
+            }
+
             _oldValue = _value;
-            if (_useDefaultValue) ResetToDefault();
         }
         #endregion Unity Callbacks
 
         #region Methods
-        public virtual T SetValue(SO_BaseVariable<T> value) => SetValue(value.Value);
+        public virtual T SetValue(SO_BaseVariable<T> variable) => SetValue(variable.Value);
 
         public virtual T SetValue(T newValue)
         {
-            if (_readOnly) return _value;
+            if (_readOnly)
+            {
+                ReadOnlyWarning();
+                return _value;
+            }
+
             if (Clampable && !_isClamped)
             {
                 newValue = ClampValue(newValue);
                 _isClamped = true;
             }
             
-            if (AreEqual(_oldValue, newValue)) return _value;
+            if (AreEqual(_oldValue, newValue)) { return _value; }
             
             // OnPropertyChanged();
-            ValueChanged(newValue);
+            OnValueChanged(newValue);
             _oldValue = _value;
             return newValue;
         }
 
         protected virtual bool AreEqual(T a, T b)
         {
-            if (a != null) return a.Equals(b);
+            if (a != null) { return a.Equals(b); }
             return b == null;
         }
 
-        protected virtual T ClampValue(T value) => value;
+        protected abstract T ClampValue(T value);
 
         protected void OnPropertyChanged([CallerMemberName] string name = null) 
         {
@@ -111,17 +121,26 @@ namespace Ransom
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        protected void ValueChanged(T value) => OnValueChanged?.Invoke(value);
+        protected void OnValueChanged(T value) => ValueChanged?.Invoke(value);
+
+        private void Clear()
+        {
+            if (_useDefaultValue)
+            {
+                Value = _defaultValue;
+                return;
+            }
+
+            Value = default;
+        }
 
         private void ReadOnlyWarning()
         {
-            if (!_readOnly) return;
+            if (!_readOnly) { return; }
             Debug.Log($"Attempted to set value on <color=magenta>{name}</color>, but value is readonly!", this);
         }
 
-        private void ResetToDefault() => Value = _defaultValue;
-
-        public override string ToString() => (_value == null) ? "null" : _value.ToString();
+        public override string ToString() => (_value == null) ? "Null value." : _value.ToString();
 
         public static implicit operator T(SO_BaseVariable<T> variable) => variable.Value;
         #endregion Methods
